@@ -678,8 +678,41 @@
 #div = int(input('Ingrese numero: '))
 #i = 1
 #while i <= div:
-    #if (div % i) == 0:
-        #print('{:2}'.format(i), end=' ')
-    #i += 1
+#   if (div % i) == 0:
+#       print('{:2}'.format(i), end=' ')
+#   i += 1
 #print()
 
+#39: Tiempo de viaje
+
+#tiempoMin = 0
+#
+#while True:
+#    durTramo= int(input('Duracion tramo '))
+#    tiempoMin += durTramo
+#
+#    if durTramo == 0:
+#        break
+#horas = tiempoMin / 60
+#segundos = tiempoMin % 60
+#print(f'{int(horas)}:{segundos}')
+
+#40: Dibujo de asteriscos
+
+#altura = int(input('Altura: '))
+#ancho = int(input('Ancho: '))
+#
+#for i in range(altura):
+#    for j in range(ancho):
+#        print("*", end=" ")
+#    print()
+
+#altura = int(input('Altura: '))
+#ancho = 1
+#for i in range(altura):
+#    for j in range(ancho):
+#        print("*", end=" ") 
+#    ancho += 1
+#    print()
+
+    
