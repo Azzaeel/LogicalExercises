@@ -827,9 +827,10 @@
 
 #Funciones recursivas
 
-def factorial(number):
-    if number > 1:
-        number *= factorial(number -1)
-    return number
+#def factorial(number):
+#    if number > 1:
+#        number *= factorial(number -1)
+#    return number
+#
+#factorial(5)
 
-factorial(5)
