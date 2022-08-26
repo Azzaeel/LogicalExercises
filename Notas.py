@@ -698,7 +698,6 @@
 #print(f'{int(horas)}:{segundos}')
 
 #40: Dibujo de asteriscos
-
 #altura = int(input('Altura: '))
 #ancho = int(input('Ancho: '))
 #
@@ -706,7 +705,6 @@
 #    for j in range(ancho):
 #        print("*", end=" ")
 #    print()
-
 #altura = int(input('Altura: '))
 #ancho = 1
 #for i in range(altura):
@@ -715,4 +713,123 @@
 #    ancho += 1
 #    print()
 
+#Pi
+# num = int(input('Ingrese un numero '))
+
+# serie = 0
+# for i in range(1, num + 1): 
+#    serie += (-1)**(i+1) / (2 * i - 1) 
+
+# serie = serie * 4
+# print(serie)
+
+
+#Suma de fracciones
+
+#cont = 1
+#suma = 0
+#print('Potencia    Fraccion     Suma' )
+#while cont <= 10:
+#    f = 0.5**cont
+#    suma += f
+#    f = round(f, 5) 
+#    suma = round(suma, 5)
+#    
+#    print(cont, "        " + "  ", f, "  " , "    ", suma)
+#    cont += 1
     
+#    
+#Accediendo a intervalos de listas
+
+#lista = ['a', 'b', 'c', 'd', 'f']
+#
+#rango = lista[0:3]
+#print(rango)
+#cont = 0
+#
+#for i in lista:
+#    cont += 1
+#
+#print(cont)
+#
+
+#lista.pop(0)
+#print(lista)
+
+#
+#for i in range(11):
+#    if i % 3 == 0:
+#        print(i)
+
+#Crear una lista que contenga numeros menores a 5 a partir de una tupla.
+
+#tupla = (13, 1, 8, 3, 2, 5, 8) 
+#lista = []
+#
+#for i in tupla:
+#    if i < 5:
+#        lista.append(i)
+#
+#print(lista)
+
+#diccionario = {
+#	'Nombre': 'Jhonatan',
+#	'Apellido': 'Duran',
+#	'Edad': '21'}
+#
+#for i, j in diccionario.items():
+#    print(i, j)
+
+# lista = [2, 4, 5, 1, 4]
+
+# tamano = len(lista)
+# newLista = []
+# cont = 0
+
+# for j in range(5):
+#     menor = lista[0]
+#     for i in range(tamano):
+#         if lista[i] <= menor:
+#             menor = lista[i]
+
+#     newLista.append(menor)
+#     lista.remove(menor)
+#     tamano -= 1
+#     cont += 1
+# print(lista)
+# print(newLista)
+
+#list = [4, 3, 2, 6, 5, 7]
+#
+#for i in range(len(list)):
+#    menor = i
+#    for j in range(i + 1, len(list)):
+#        if list[j] < list[menor]:
+#            menor = j 
+#
+#    list[i], list[menor] = list[menor], list[i]
+#    print(list)
+#print(list)
+
+#def sumarNumeros(*args):
+#    suma = 0
+#    for i in args:
+#        suma += i
+#    return suma
+#
+#print(sumarNumeros(2,2,2,2))
+
+#def listarTerminos(**kwargs):
+#    for key, valor in kwargs.items():
+#        print(f'{key}: {valor}')
+#
+#listarTerminos(Nombre = 'Jhonatan', Apellido = 'Apellido')
+
+#Funciones recursivas
+
+def factorial(number):
+    if number > 1:
+        number *= factorial(number -1)
+    return number
+
+factorial(5)
