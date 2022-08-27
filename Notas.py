@@ -834,3 +834,31 @@
 #
 #factorial(5)
 
+#Fibonachi con recursividad
+
+# def fibonachi(number):
+#     if number <= 1:
+#         return number
+#     else:
+#         number = fibonachi(number -1) + fibonachi(number -2)
+#     return number
+
+# print(fibonachi(4))
+
+#Funcion recursiva
+
+# def countDown(number):
+#     if number >= 1:
+#         print(number)
+#         number -= countDown(number - 1)
+#     return number
+
+# countDown(3)
+
+#Pago de total de una compra
+
+def calcularPago(pagoSinImpuesto, impuesto):
+    return pagoSinImpuesto +pagoSinImpuesto * (impuesto/100)
+
+
+print(calcularPago(1000,16))
