@@ -857,8 +857,8 @@
 
 #Pago de total de una compra
 
-def calcularPago(pagoSinImpuesto, impuesto):
-    return pagoSinImpuesto +pagoSinImpuesto * (impuesto/100)
+# def calcularPago(pagoSinImpuesto, impuesto):
+#     return pagoSinImpuesto +pagoSinImpuesto * (impuesto/100)
 
 
-print(calcularPago(1000,16))
+# print(calcularPago(1000,16))
