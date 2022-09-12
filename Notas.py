@@ -843,7 +843,11 @@
 #         number = fibonachi(number -1) + fibonachi(number -2)
 #     return number
 
-# print(fibonachi(4))
+# cont = 10
+
+# while(cont >= 0):    
+#     print(fibonachi(cont))
+#     cont += 1
 
 #Funcion recursiva
 
@@ -862,3 +866,33 @@
 
 
 # print(calcularPago(1000,16))
+
+#Celcius to fahrenheit
+
+# def celToFah(cel):
+#     return cel * 1.8 + 32
+
+# def fahToCel(fah):
+#     return (fah - 32) / 1.8
+
+# print(celToFah(32), fahToCel(68))
+
+# class Espada:
+	
+# 	def __init__(self, nombre, textura, danno, duracion):
+# 		self.nombre = nombre
+# 		self.textura = textura
+# 		self.danno = danno
+# 		self.duracion = duracion
+		
+# espadaMadera = Espada('Espada de madera', 'Robusta', 5, 4)
+
+
+#Restar elementos de una lista a otra lista
+# def arrayDiff(a,b):
+#     for i in b:
+#         for j in range(len(a)):
+#             if i in a:
+#                 a.remove(i)
+      
+#     return a
