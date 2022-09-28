@@ -896,3 +896,171 @@
 #                 a.remove(i)
       
 #     return a
+
+# Filtro de arrays
+
+# def arrayFilter(l):
+#     for i in l:
+#         if isinstance(i, str):
+#             l.remove(i)
+
+#     return l
+
+# l = [1,2,'a', 'b']
+# print(arrayFilter(l))
+
+#Invariantes de ciclo
+
+# A = [1,2,4,5,6,7,8]
+# B = [2,4,5,1,3,5,6]
+
+# point = 0
+
+# for i in range(len(A)):
+#     point = point + (A[i] * B[i])
+#     print(point)
+
+#Palabra mas corta
+
+# def find_short(s):
+#     s = s.split()
+#     l = len(s[0])
+#     for i in s:
+#        long = len(i)
+#        if long <= l:    
+#             l = long
+#     return l
+
+# palabras = 'hola como estas tu'
+# find_short(palabras)
+
+#suma de los numeros mas pequeños de una lista
+
+
+# def sum_two_smallest_numbers(numbers):
+#     count = 0
+#     menores = []
+#     while(count <= 1):
+#         minus = numbers[0]
+#         for i in numbers:
+#             if i <= minus:
+#                 minus = i
+#         menores.append(minus)   
+#         numbers.remove(minus)
+#         count += 1
+#     suma = sum(menores)
+#     return suma
+
+
+# l = [19, 5, 42, 2, 77]
+# sum_two_smallest_numbers(l)
+
+#buscar la letra faltante
+
+# def find_missing_letter(chars):
+#     minus = 'abcdefghijklmnopqrstuvwxyz'
+    
+#     return
+
+
+#Numeros pares de una lista
+
+# def evenNum(num):
+#     even = []
+#     for n in num:
+#         if n % 2 == 0:
+#             even.append(n)
+#     return even
+
+# lista = [5,3,4,8,2]
+# print(evenNum(lista))
+
+# Suma de series
+
+#def series_sum(n):
+#    denominador = 1.00
+#    inicial = 1.00
+#    suma = 0
+#    for i in range(n):
+#        suma += inicial/denominador
+#        denominador +=3
+#    
+#    return format(suma, ".2f")
+#
+#print(series_sum(1))
+
+#Torre de asteriscos
+
+# def tower_builder(n_floors):
+#     lista = []
+#     ancho = (n_floors * 2) -1
+#     for i in range(1, 2 * n_floors, 2):
+#         aster = i * "*"
+#         linea = aster.center(ancho)
+#         lista.append(linea)
+#     return lista
+
+# print(tower_builder(5))
+
+
+#Potencias consecutivas
+
+# def sum_dig_pow(a,b):
+    
+#     result = []
+#     for i in range(a,b+1):
+#         powe = 1
+#         evaluated = []
+#         num = str(i)
+#         for j in num:
+#             j = int(j) ** powe
+#             powe +=1
+#             evaluated.append(j)
+#         if i == sum(evaluated):
+#             result.append(i)
+#     return result
+
+# sum_dig_pow(1,1000)
+
+#Posicion en el alfabeto
+
+#def alphabet_position(text):
+#    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#    text = "".join(text.lower().split())
+#    result = ''
+#
+#    for i in range(len(text)):
+#        for j in range(len(alphabet)):
+#
+#            if text[i] == alphabet[j]:
+#                if i == 0:
+#                    result += str(j + 1)
+#                else:
+#                    result += " {0}".format(j + 1)
+#                break
+#
+#
+#    return result
+#
+#print(alphabet_position("The sunset sets at twelve o' clock."))
+
+
+#Palindromas
+
+# def isPalindrome(sentence):
+#     reverseSentence = ""
+#     for i in range(len(sentence) - 1, -1, -1):
+#         reverseSentence += sentence[i]
+
+#     if sentence == reverseSentence:
+#         return True
+#     else:
+#         return False
+
+# def isPalindrome2(sentence):
+#     return True if sentence == sentence[::-1] else False
+
+# print(isPalindrome2("ojos"))
+
+
+
