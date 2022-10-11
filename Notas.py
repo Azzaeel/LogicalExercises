@@ -1024,25 +1024,25 @@
 
 #Posicion en el alfabeto
 
-#def alphabet_position(text):
+# def alphabet_position(text):
 #    alphabet = 'abcdefghijklmnopqrstuvwxyz'
 #    text = "".join(text.lower().split())
 #    result = ''
-#
+
 #    for i in range(len(text)):
 #        for j in range(len(alphabet)):
-#
+
 #            if text[i] == alphabet[j]:
 #                if i == 0:
 #                    result += str(j + 1)
 #                else:
 #                    result += " {0}".format(j + 1)
 #                break
-#
-#
+
+
 #    return result
-#
-#print(alphabet_position("The sunset sets at twelve o' clock."))
+
+# print(alphabet_position("The sunset sets at twelve o' clock."))
 
 
 #Palindromas
@@ -1063,4 +1063,125 @@
 # print(isPalindrome2("ojos"))
 
 
+#Practica Clases y objetos POO
 
+# class Rectangulo:
+#     def __init__(self, high, width):
+#         self.high = high
+#         self.width = width
+    
+#     def calcular_area(self):
+#         return self.width * self.high
+
+# altura = int(input('Proporcione la altura: '))
+# base = int(input('Proporcione la base: '))
+# rectangulo1 = Rectangulo(altura, base)
+# print(rectangulo1.calcular_area())
+
+
+# class Cube:
+#     def __init__(self, width, high, depth):
+#         self.width = width
+#         self.higth = high
+#         self.depth = depth
+
+#     def calculate_volume(self):
+#         return self.width * self.higth * self.depth
+    
+# ancho = int(input('Proporcione el ancho: '))
+# alto = int(input('Proporcione el alto: '))
+# profundidad = int(input('Proporcione la profundidad: '))
+
+# cube1 = Cube(ancho, alto, profundidad)
+# print(cube1.calculate_volume())
+
+
+
+#El numero que esta una cantidad n impar veces
+
+# def contar_impar(nums):
+#     count = 0
+#     for i in nums:
+#         for j in nums:
+#             if i == j:
+#                 count += 1
+#         if count % 2 != 0:
+#            return i
+#         else:
+#             count = 0
+
+
+# print(contar_impar([1,1,2,-2,5,2,4,4,-1,-2,5]))
+
+
+# def find_it(seq):
+#     for i in seq:
+#         if seq.count(i)%2!=0:
+#             return i
+
+
+
+# Agregar la primera letra al final
+
+# def pig_it(text):
+#     newText = ''
+#     for word in text.split(' '):
+#         if word.isalpha():
+#             newWord = word[1:] + word[0] + 'ay'
+#             newText += newWord + ' '
+#         else:
+#             newText += word + ' '
+
+#     return newText.strip()
+
+# print(pig_it("O tempora o mores !"))
+
+
+#class Espada:
+#	def __init__(self, nombre, textura, danno, duracion):
+#		self.__nombre = nombre
+#		self.__textura = textura
+#		self.danno = danno
+#		self.duracion = duracion
+#		
+#	def nombre(self):
+#		return self.__nombre
+#	
+#	@property
+#	def textura(self):
+#		return self.__textura
+#
+#	@textura.setter
+#	def textura(self, textura):
+#		self.__textura = textura
+#	
+#espadaMetal = Espada('Espada de metal', 'forjada', 8, 8)
+#
+#print(espadaMetal.nombre())
+#print(espadaMetal.textura)
+#espadaMetal.textura = 'Rugosa'
+#print(espadaMetal.textura)
+
+#Moviendo ceros al final
+
+# def move_zeros(lst):
+# 	newList = lst
+# 	for i in newList:
+# 		if i == 0:
+# 			lst.remove(i)
+# 			lst.append(i)
+# 	return lst
+
+# print(move_zeros([1, 0, 1, 2, 0, 1, 3]))
+
+#Eliminar numeros pares de una lista
+
+# def delOdd(lst):
+#     newList = lst.copy()
+#     for i in range(len(lst) -1, -1, -1):
+#         if newList[i] % 2 == 0:
+#             newList.pop(i)
+        
+#     return newList
+
+# print(delOdd([1,2,2,3]))
