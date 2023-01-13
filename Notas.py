@@ -1185,3 +1185,83 @@
 #     return newList
 
 # print(delOdd([1,2,2,3]))
+
+#Practica de herencia
+
+
+# class Arma:
+#     def __init__(self, nombre, danno):
+#         self._nombre = nombre
+#         self.danno = danno
+        
+#     @property
+#     def getnombre(self):
+#         return self._nombre     
+
+#     @nombre.setter
+#     def nombre(self, nombre):
+#         self._nombre = nombre
+    
+
+#     def __str__(self):
+#         return f'{self.nombre}, {self.danno}'
+
+
+# class Espada(Arma):
+#     def __init__(self, nombre, danno, tipo):
+#         super().__init__(nombre, danno)
+#         self.tipo = tipo
+
+#     def __str__(self):
+#         return f'El tipo es: { self.tipo }'
+
+# arma1 = Espada('Espada de hierro', 10, 'kunai')
+# print(arma1)
+        
+
+# palabraClave = 'adelante'
+# i = 1
+
+# while(i <= 3):
+#     password = input('Ingrese la contraseña ')
+
+#     if password == palabraClave:
+#         print('Contraseña correcta')
+#         break
+#     else:
+#         print('Contrasena incorrecta')
+#         i +=1
+# print('Numero de intentos exedido')
+
+
+#Ejercicio de herencia
+
+class Vehiculo:
+    
+    def __init__(self, color, ruedas):
+        self._color = color
+        self._ruedas = ruedas
+        
+    def __str__(self):
+        print(f'el vehiculo es de color {self._color} y tiene {self._ruedas} ruedas')
+        
+        
+class Coche(Vehiculo):
+    
+    def __init__(self, color, ruedas, velocidad):
+        super().__init__(color, ruedas)
+        self._velocidad = velocidad
+        
+    def __str__(self):
+        print(f'El coche es de color {self._color} tiene {self._ruedas} y una velocidad de {self._velocidad}')
+        
+class Bicicleta(Vehiculo):
+    
+    def __init__(self, color, ruedas, tipo):
+        super().__init__(color, ruedas)
+        self._tipo = tipo
+        
+    
+    def __str__(self):
+        print(f'La bicicleta es de color {self._color} tiene {self._ruedas} y es de tipo {self._tipo}')
+        
