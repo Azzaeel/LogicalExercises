@@ -1236,36 +1236,224 @@
 
 #Ejercicio de herencia
 
-class Vehiculo:
+# class Vehiculo:
     
-    def __init__(self, color, ruedas):
-        self._color = color
-        self._ruedas = ruedas
+#     def __init__(self, color, ruedas):
+#         self._color = color
+#         self._ruedas = ruedas
         
-    def __str__(self):
-        return 'Color: ' + self._color + ' Ruedas: ' + str(self._ruedas)
+#     def __str__(self):
+#         return 'Color: ' + self._color + ' Ruedas: ' + str(self._ruedas)
         
         
-class Coche(Vehiculo):
+# class Coche(Vehiculo):
     
-    def __init__(self, color, ruedas, velocidad):
-        super().__init__(color, ruedas)
-        self._velocidad = velocidad
+#     def __init__(self, color, ruedas, velocidad):
+#         super().__init__(color, ruedas)
+#         self._velocidad = velocidad
         
-    def __str__(self):
-        return super().__str__() + ' Velocidad: ' + self._velocidad
+#     def __str__(self):
+#         return super().__str__() + ' Velocidad: ' + self._velocidad
         
-class Bicicleta(Vehiculo):
+# class Bicicleta(Vehiculo):
     
-    def __init__(self, color, ruedas, tipo):
-        super().__init__(color, ruedas)
-        self._tipo = tipo
+#     def __init__(self, color, ruedas, tipo):
+#         super().__init__(color, ruedas)
+#         self._tipo = tipo
         
     
-    def __str__(self):
-        return super().__str__() + ' Tipo: ' + self._tipo
+#     def __str__(self):
+#         return super().__str__() + ' Tipo: ' + self._tipo
         
 
-bicicleta1 = Bicicleta('blanca', 2, 'montaña')
+# bicicleta1 = Bicicleta('blanca', 2, 'montaña')
 
-print(bicicleta1)
+# print(bicicleta1)
+
+#Ejercicio HErencia multiple
+# from abc import ABC, abstractclassmethod
+# class FiguraGeometrica(ABC):
+    
+#     def __init__(self, ancho, alto):
+#         self._alto = alto
+#         self._ancho = ancho
+    
+#     @property
+#     def ancho(self):
+#         return self._ancho
+    
+#     @ancho.setter
+#     def ancho(self, ancho):
+#         self._ancho = ancho
+    
+#     @property
+#     def alto(self):
+#         return self._alto
+    
+#     @alto.setter
+#     def alto(self, alto):
+#         self._alto = alto
+        
+#     def __str__(self):
+#         return 'ancho: ' + str(self._ancho) + ' alto: ' + str(self._alto)
+    
+#     @abstractclassmethod
+#     def calcArea(self):
+#         pass
+        
+    
+# class Color:
+    
+#     def __init__(self, color):
+#         self._color = color
+        
+#     @property
+#     def color(self):
+#         return self._color
+
+#     @color.setter
+#     def color(self, color):
+#         self._color = color
+        
+#     def __str__(self):
+#         return ' color: ' + str(self._color)
+    
+# class Rectangulo(FiguraGeometrica, Color):
+    
+#     def __init__(self, ancho, alto, color):
+#         FiguraGeometrica.__init__(self, ancho, alto)
+#         Color.__init__(self, color)
+        
+#     def calcArea(self):
+#         return self._alto * self._ancho
+    
+#     def __str__(self):
+#         return FiguraGeometrica.__str__(self) + Color.__str__(self)
+    
+
+
+# class Cuadrado(FiguraGeometrica, Color):
+    
+#     def __init__(self, ancho, alto, color):
+#         FiguraGeometrica.__init__(self, ancho, alto)
+#         Color.__init__(self, color)
+        
+#     def calcArea(self):
+#         return self._ancho * self._ancho
+    
+#     def __str__(self):
+#         return FiguraGeometrica.__str__(self) + Color.__str__(self)
+
+
+# rec1 = Rectangulo(10, 20, 'rojo')
+# cuadr1 = Cuadrado(20, 20, 'Verde')
+# print(rec1.calcArea())
+# print(cuadr1.calcArea())
+# print(cuadr1)
+# print(Rectangulo.mro())
+# print(rec1)
+
+
+
+#Ejercicio contador de objetos
+
+# class Persona:
+    
+#     personCont = 0
+#     @classmethod
+#     #Funcion para modificar la variable de clase
+#     def generariD(cls):
+#         cls.personCont += 1
+#         return cls.personCont
+    
+#     def __init__(self, nombre, edad):
+#         Persona.personCont += 1
+#         self.idPerson = Persona.generariD()
+#         self.nombre = nombre
+#         self.edad =  edad
+        
+#     def __str__(self):
+#         return f'Persona [{self.idPerson} {self.nombre} {self.edad}]'
+    
+
+# persona1 = Persona('Juan', '30')
+# print(persona1)
+# persona2 = Persona('Jhonatan', '21')
+# print(persona2)
+
+
+#Ejercicio de diseno de clases
+
+class Producto:
+    contProdu = 0
+    
+    @classmethod
+    def calcUniProdc(cls):
+        cls.contProdu += 1
+        return cls.contProdu
+    
+    def __init__(self, nombre, precio):
+        self.idProduct = Producto.calcUniProdc()
+        self._nombre = nombre
+        self._precio = precio
+    
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @property
+    def precio(self):
+        return self._precio
+        
+    
+    def __str__(self):
+        return f'Producto[{self.idProduct} {self.nombre}, {str(self.precio)}]'
+    
+
+class Orden:
+    
+    ordCont = 0
+    
+    @classmethod
+    def ordContFuc(cls):
+        cls.ordCont += 1
+        return cls.ordCont
+    
+    def __init__(self, *productos):
+        self.idOrden = Orden.ordContFuc()
+        self._productos = list(productos)
+        
+    #Funcion para agregar productos a la orden
+    
+    def addProducto(self, producto):
+       self._productos.append(producto)
+    
+    def calcularFactura(self):
+        total = 0
+        for producto in self._productos:
+            total += producto.precio
+        return total
+    
+    
+    def __str__(self):
+        productosStr = ''
+        
+        for producto in self._productos:
+            productosStr += producto.__str__() + '|'
+            
+        return f'Orden: {self.idOrden}, Contenido: {productosStr}'
+    
+producto1 = Producto('Mantquilla', 5000)
+producto2 = Producto('Leche', 3000)
+producto3 = Producto('Arepa', 900)
+producto4 = Producto('Cebolla', 2000)
+
+lista1 = [producto1, producto2, producto3]
+
+orden1 = Orden(producto1, producto2, producto3)
+
+print(orden1)
+print(orden1.calcularFactura())
+orden1.addProducto(producto4)
+print(orden1)
+print(orden1.calcularFactura())
