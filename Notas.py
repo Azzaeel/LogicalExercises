@@ -1384,76 +1384,125 @@
 
 #Ejercicio de diseno de clases
 
-class Producto:
-    contProdu = 0
+# class Producto:
+#     contProdu = 0
     
-    @classmethod
-    def calcUniProdc(cls):
-        cls.contProdu += 1
-        return cls.contProdu
+#     @classmethod
+#     def calcUniProdc(cls):
+#         cls.contProdu += 1
+#         return cls.contProdu
     
-    def __init__(self, nombre, precio):
-        self.idProduct = Producto.calcUniProdc()
-        self._nombre = nombre
-        self._precio = precio
+#     def __init__(self, nombre, precio):
+#         self.idProduct = Producto.calcUniProdc()
+#         self._nombre = nombre
+#         self._precio = precio
     
-    @property
-    def nombre(self):
-        return self._nombre
+#     @property
+#     def nombre(self):
+#         return self._nombre
     
-    @property
-    def precio(self):
-        return self._precio
+#     @property
+#     def precio(self):
+#         return self._precio
         
     
-    def __str__(self):
-        return f'Producto[{self.idProduct} {self.nombre}, {str(self.precio)}]'
+#     def __str__(self):
+#         return f'Producto[{self.idProduct} {self.nombre}, {str(self.precio)}]'
     
 
-class Orden:
+# class Orden:
     
-    ordCont = 0
+#     ordCont = 0
     
-    @classmethod
-    def ordContFuc(cls):
-        cls.ordCont += 1
-        return cls.ordCont
+#     @classmethod
+#     def ordContFuc(cls):
+#         cls.ordCont += 1
+#         return cls.ordCont
     
-    def __init__(self, *productos):
-        self.idOrden = Orden.ordContFuc()
-        self._productos = list(productos)
+#     def __init__(self, *productos):
+#         self.idOrden = Orden.ordContFuc()
+#         self._productos = list(productos)
         
-    #Funcion para agregar productos a la orden
+#     #Funcion para agregar productos a la orden
     
-    def addProducto(self, producto):
-       self._productos.append(producto)
+#     def addProducto(self, producto):
+#        self._productos.append(producto)
     
-    def calcularFactura(self):
-        total = 0
-        for producto in self._productos:
-            total += producto.precio
-        return total
+#     def calcularFactura(self):
+#         total = 0
+#         for producto in self._productos:
+#             total += producto.precio
+#         return total
     
     
-    def __str__(self):
-        productosStr = ''
+#     def __str__(self):
+#         productosStr = ''
         
-        for producto in self._productos:
-            productosStr += producto.__str__() + '|'
+#         for producto in self._productos:
+#             productosStr += producto.__str__() + '|'
             
-        return f'Orden: {self.idOrden}, Contenido: {productosStr}'
+#         return f'Orden: {self.idOrden}, Contenido: {productosStr}'
     
-producto1 = Producto('Mantquilla', 5000)
-producto2 = Producto('Leche', 3000)
-producto3 = Producto('Arepa', 900)
-producto4 = Producto('Cebolla', 2000)
+# producto1 = Producto('Mantquilla', 5000)
+# producto2 = Producto('Leche', 3000)
+# producto3 = Producto('Arepa', 900)
+# producto4 = Producto('Cebolla', 2000)
 
-lista1 = [producto1, producto2, producto3]
+# lista1 = [producto1, producto2, producto3]
 
-orden1 = Orden(producto1, producto2, producto3)
+# orden1 = Orden(producto1, producto2, producto3)
 
-print(orden1)
-print(orden1.calcularFactura())
-orden1.addProducto(producto4)
-print(orden1)
-print(orden1.calcularFactura())
+# print(orden1)
+# print(orden1.calcularFactura())
+# orden1.addProducto(producto4)
+# print(orden1)
+# print(orden1.calcularFactura())
+
+
+#Prueba de sobrecarga de operadores
+
+
+# class Vector:
+	
+# 	def __init__(self, x, y):
+# 		self.x = x
+# 		self.y = y
+	
+# 	def	__add__(self, other):
+# 		return Vector(self.x + other.x, self.y + other.y)
+
+
+# vector1 = Vector(1, 1)
+# vector2 = Vector(1, 1)
+# vector3 = vector1 + vector2
+# print(vector3.x, vector3.y)
+
+
+
+#Ejemplo de redefinicion de metodos (polimorfismo)
+
+class Figura:
+	def calcular_area(self):
+		pass
+
+class Cuadrado(Figura):
+	def __init__(self, lado):
+		self.lado = lado
+	
+	def calcular_area(self):
+		return self.lado ** 2
+
+class Circulo(Figura):
+	def __init__(self, radio):
+		self.radio = radio
+	
+	def calcular_area(self):
+		return 3.1416 * (self.radio ** 2)
+
+figuras = [Cuadrado(20), Circulo(10)]
+
+for figura in figuras:
+	print(figura.calcular_area())
+
+
+#
