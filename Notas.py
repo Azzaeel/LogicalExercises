@@ -1481,28 +1481,274 @@
 
 #Ejemplo de redefinicion de metodos (polimorfismo)
 
-class Figura:
-	def calcular_area(self):
-		pass
+# class Figura:
+# 	def calcular_area(self):
+# 		pass
 
-class Cuadrado(Figura):
-	def __init__(self, lado):
-		self.lado = lado
+# class Cuadrado(Figura):
+# 	def __init__(self, lado):
+# 		self.lado = lado
 	
-	def calcular_area(self):
-		return self.lado ** 2
+# 	def calcular_area(self):
+# 		return self.lado ** 2
 
-class Circulo(Figura):
-	def __init__(self, radio):
-		self.radio = radio
+# class Circulo(Figura):
+# 	def __init__(self, radio):
+# 		self.radio = radio
 	
-	def calcular_area(self):
-		return 3.1416 * (self.radio ** 2)
+# 	def calcular_area(self):
+# 		return 3.1416 * (self.radio ** 2)
 
-figuras = [Cuadrado(20), Circulo(10)]
+# figuras = [Cuadrado(20), Circulo(10)]
 
-for figura in figuras:
-	print(figura.calcular_area())
+# for figura in figuras:
+# 	print(figura.calcular_area())
 
 
-#
+# ejercicio de polimorfismo
+
+# class Empleado:
+#     def __init__(self, nombre, sueldo):
+#         self._nombre = nombre
+#         self._sueldo = sueldo
+        
+#     @property
+#     def nombre(self):
+#         return self._nombre
+    
+#     @property
+#     def sueldo(self):
+#         return self._sueldo
+    
+#     @nombre.setter
+#     def nombre(self, nombre):
+#         self._nombre = nombre
+        
+#     @sueldo.setter
+#     def sueldo(self, sueldo):
+#         self._sueldo = sueldo
+    
+#     def __str__(self):
+#         return f'Nombre: {self._nombre}, Sueldo: {str(self._sueldo)}'
+    
+    
+
+# class Gerente(Empleado):
+# 	def __init__(self, nombre, sueldo, departamento):
+# 		super().__init__(nombre, sueldo)
+# 		self._departamento = departamento
+
+# 	def __str__(self):
+# 		return super().__str__() + ', Departamento: ' + self._departamento
+
+
+# def imprimir_detalles(*objetos):
+#     for objeto in list(objetos):
+#         print(objeto)
+        
+
+
+# gerente1 = Gerente('Jhonatan', 3000000, 'Ingenieria')
+# empleado1 = Empleado('Brajhan', 100000)
+# empleado3 = Empleado('Luis', 200000)
+# gerente2 = Gerente('Carlos', 300000, 'Administracion')
+
+# imprimir_detalles(gerente1, gerente2, empleado1, empleado3)
+
+
+#Permutaciones
+
+# def permutaciones(s):
+    
+#     listacarac = list(s)
+#     if len(listacarac) == 1:
+#         return [x for x in s[0]]
+#     else:
+#         resultado = []
+#         for elemento in listacarac[0]:
+#             for i in permutaciones(s[1:]):
+#                 resultado.append(str((elemento,) + i))
+#             return resultado
+        
+    
+# print(permutaciones('a'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Laboratorio mundo PC
+
+class DispositivoEntrada:
+    
+    def __init__(self, tipoEntrada, marca):
+        self._tipoEntrada = tipoEntrada
+        self._marca = marca
+    
+    @property
+    def tipoEntrada(self):
+        return self._tipoEntrada
+
+    @property
+    def marca(self):
+        return self.marca
+    
+    @tipoEntrada.setter
+    def tipoEntrada(self, tipoEntrada):
+        self._tipoEntrada = tipoEntrada
+        
+    @marca.setter
+    def marca(self, marca):
+        self._marca = marca
+    
+    def __str__(self):
+        return f'Tipo de Entrada: {self._tipoEntrada}, Marca: {self._marca}'
+    
+
+
+class Raton(DispositivoEntrada):
+    contRatones = 0
+    
+    @classmethod
+    def calcIdRaton(cls):
+        cls.contRatones += 1
+        return cls.contRatones
+    
+    def __init__(self, nombre, tipoEntrada, marca):
+        self._idRaton = Raton.calcIdRaton()
+        self._nombre = nombre
+        super().__init__(tipoEntrada, marca)
+        
+    @property
+    def idRaton(self):
+        return self._idRaton
+    
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @idRaton.setter
+    def idRaton(self, idRaton):
+        self._idRaton = idRaton
+    
+    @nombre.setter
+    def nombre(self, nombre):
+        self._nombre = nombre
+        
+    def __str__(self):
+        return f'ID raton: {self._idRaton}, Nombre: {self._nombre} ' + super().__str__() 
+    
+    
+
+class Teclado(DispositivoEntrada):
+    
+    contTeclado = 0
+    
+    @classmethod
+    def calcIdTeclado(cls):
+        cls.contTeclado += 1
+        return cls.contTeclado
+    
+    def __init__(self, nombre, tipoEntrada, marca):
+        self._teclId = Teclado.calcIdTeclado()
+        self._nombre = nombre
+        super().__init__(tipoEntrada, marca)
+    
+    @property
+    def idTeclado(self):
+        return self._teclId
+    
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    
+    @idTeclado.setter
+    def idTeclado(self, idt):
+        self._teclId = idt
+    
+    @nombre.setter
+    def nombre(self, nonbre):
+        self._nombre = nombre
+        
+
+    def __str__(self):
+        return f'Id teclado: {self._teclId}, Nombre: {self._nombre}' + super().__str__()
+    
+    
+
+class Monitor:
+    
+    contMonitores = 0
+    
+    @classmethod
+    def calcContMon(cls):
+        cls.contMonitores += 1
+        return cls.contMonitores
+    
+    def __init__(self, nombre, marca, tamanno):
+
+         self._idMonitor = Monitor.calcContMon()
+         self._nombre = nombre
+         self._marca = marca
+         self._tamanno = tamanno
+         
+    @property
+    def idMonitor(self):
+        return self._idMonitor
+    
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @property
+    def marca(self):
+        return self._marca
+    
+    @property 
+    def tamanno(self):
+        return self._tamanno
+    
+    @nombre.setter
+    def nombre(self, nombre):
+        self._nombre = nombre
+         
+    @marca.setter
+    def marca(self, marca):
+        self._marca = marca
+        
+    @tamanno.setter
+    def tamanno(self, tamanno):
+        self._tamanno = tamanno
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rat1 = Raton('G503', 'USB', 'Logitech')
+
+print(rat1)
