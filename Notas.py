@@ -1576,179 +1576,553 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Laboratorio mundo PC
 
-class DispositivoEntrada:
+# class DispositivoEntrada:
     
-    def __init__(self, tipoEntrada, marca):
-        self._tipoEntrada = tipoEntrada
-        self._marca = marca
+#     def __init__(self, tipoEntrada, marca):
+#         self._tipoEntrada = tipoEntrada
+#         self._marca = marca
     
-    @property
-    def tipoEntrada(self):
-        return self._tipoEntrada
+#     @property
+#     def tipoEntrada(self):
+#         return self._tipoEntrada
 
-    @property
-    def marca(self):
-        return self.marca
+#     @property
+#     def marca(self):
+#         return self.marca
     
-    @tipoEntrada.setter
-    def tipoEntrada(self, tipoEntrada):
-        self._tipoEntrada = tipoEntrada
+#     @tipoEntrada.setter
+#     def tipoEntrada(self, tipoEntrada):
+#         self._tipoEntrada = tipoEntrada
         
-    @marca.setter
-    def marca(self, marca):
-        self._marca = marca
+#     @marca.setter
+#     def marca(self, marca):
+#         self._marca = marca
     
-    def __str__(self):
-        return f'Tipo de Entrada: {self._tipoEntrada}, Marca: {self._marca}'
+#     def __str__(self):
+#         return f'Tipo de Entrada: {self._tipoEntrada}, Marca: {self._marca}'
     
 
 
-class Raton(DispositivoEntrada):
-    contRatones = 0
+# class Raton(DispositivoEntrada):
+#     contRatones = 0
     
-    @classmethod
-    def calcIdRaton(cls):
-        cls.contRatones += 1
-        return cls.contRatones
+#     @classmethod
+#     def calcIdRaton(cls):
+#         cls.contRatones += 1
+#         return cls.contRatones
     
-    def __init__(self, nombre, tipoEntrada, marca):
-        self._idRaton = Raton.calcIdRaton()
-        self._nombre = nombre
-        super().__init__(tipoEntrada, marca)
+#     def __init__(self, nombre, tipoEntrada, marca):
+#         self._idRaton = Raton.calcIdRaton()
+#         self._nombre = nombre
+#         super().__init__(tipoEntrada, marca)
         
-    @property
-    def idRaton(self):
-        return self._idRaton
+#     @property
+#     def idRaton(self):
+#         return self._idRaton
     
-    @property
-    def nombre(self):
-        return self._nombre
+#     @property
+#     def nombre(self):
+#         return self._nombre
     
-    @idRaton.setter
-    def idRaton(self, idRaton):
-        self._idRaton = idRaton
+#     @idRaton.setter
+#     def idRaton(self, idRaton):
+#         self._idRaton = idRaton
     
-    @nombre.setter
-    def nombre(self, nombre):
-        self._nombre = nombre
+#     @nombre.setter
+#     def nombre(self, nombre):
+#         self._nombre = nombre
         
-    def __str__(self):
-        return f'ID raton: {self._idRaton}, Nombre: {self._nombre} ' + super().__str__() 
+#     def __str__(self):
+#         return f'ID raton: {self._idRaton}, Nombre: {self._nombre} ' + super().__str__() 
     
     
 
-class Teclado(DispositivoEntrada):
+# class Teclado(DispositivoEntrada):
     
-    contTeclado = 0
+#     contTeclado = 0
     
-    @classmethod
-    def calcIdTeclado(cls):
-        cls.contTeclado += 1
-        return cls.contTeclado
+#     @classmethod
+#     def calcIdTeclado(cls):
+#         cls.contTeclado += 1
+#         return cls.contTeclado
     
-    def __init__(self, nombre, tipoEntrada, marca):
-        self._teclId = Teclado.calcIdTeclado()
-        self._nombre = nombre
-        super().__init__(tipoEntrada, marca)
+#     def __init__(self, nombre, tipoEntrada, marca):
+#         self._teclId = Teclado.calcIdTeclado()
+#         self._nombre = nombre
+#         super().__init__(tipoEntrada, marca)
     
-    @property
-    def idTeclado(self):
-        return self._teclId
+#     @property
+#     def idTeclado(self):
+#         return self._teclId
     
-    @property
-    def nombre(self):
-        return self._nombre
+#     @property
+#     def nombre(self):
+#         return self._nombre
     
     
-    @idTeclado.setter
-    def idTeclado(self, idt):
-        self._teclId = idt
+#     @idTeclado.setter
+#     def idTeclado(self, idt):
+#         self._teclId = idt
     
-    @nombre.setter
-    def nombre(self, nonbre):
-        self._nombre = nombre
+#     @nombre.setter
+#     def nombre(self, nombre):
+#         self._nombre = nombre
         
 
-    def __str__(self):
-        return f'Id teclado: {self._teclId}, Nombre: {self._nombre}' + super().__str__()
+#     def __str__(self):
+#         return f'Id teclado: {self._teclId}, Nombre: {self._nombre}' + super().__str__()
     
     
 
-class Monitor:
+# class Monitor:
     
-    contMonitores = 0
+#     contMonitores = 0
     
-    @classmethod
-    def calcContMon(cls):
-        cls.contMonitores += 1
-        return cls.contMonitores
+#     @classmethod
+#     def calcContMon(cls):
+#         cls.contMonitores += 1
+#         return cls.contMonitores
     
-    def __init__(self, nombre, marca, tamanno):
+#     def __init__(self, nombre, marca, tamanno):
 
-         self._idMonitor = Monitor.calcContMon()
-         self._nombre = nombre
-         self._marca = marca
-         self._tamanno = tamanno
+#         self._idMonitor = Monitor.calcContMon()
+#         self._nombre = nombre
+#         self._marca = marca
+#         self._tamanno = tamanno
          
-    @property
-    def idMonitor(self):
-        return self._idMonitor
+#     @property
+#     def idMonitor(self):
+#         return self._idMonitor
     
-    @property
-    def nombre(self):
-        return self._nombre
+#     @property
+#     def nombre(self):
+#         return self._nombre
     
-    @property
-    def marca(self):
-        return self._marca
+#     @property
+#     def marca(self):
+#         return self._marca
     
-    @property 
-    def tamanno(self):
-        return self._tamanno
+#     @property 
+#     def tamanno(self):
+#         return self._tamanno
     
-    @nombre.setter
-    def nombre(self, nombre):
-        self._nombre = nombre
+#     @nombre.setter
+#     def nombre(self, nombre):
+#         self._nombre = nombre
          
-    @marca.setter
-    def marca(self, marca):
-        self._marca = marca
+#     @marca.setter
+#     def marca(self, marca):
+#         self._marca = marca
         
-    @tamanno.setter
-    def tamanno(self, tamanno):
-        self._tamanno = tamanno
+#     @tamanno.setter
+#     def tamanno(self, tamanno):
+#         self._tamanno = tamanno
         
         
 
+# rat1 = Raton('G503', 'USB', 'Logitech')
+
+# print(rat1)
+
+
+# Pruebas w3schools
+
+#txt = "Hello world"
+#x = txt[2:5]
+#print(x)
+
+# import time as tm
+# starttime = None
+# endtime =None
+
+# def program(l):
+#     global starttime, endtime
+#     starttime = tm.time()
+#     for i in range(len(l)):
+#        if l[i] in l[i+1:]:
+#            endtime = tm.time()
+#            return True 
+#     endtime = tm.time()
+#     return False
+    
+    
+# print(program([1,2,2,3,3,4]))
+# print(endtime - starttime)
+
+
+#Omec pruebas
+
+
+# Arithmetic arranger
+
+
+# def mostrar_operacion(lista, val = False):
+    
+#     if len(lista) > 4:
+#         raise LongitudExcedidaError()
+    
+#     line1 = line2 = line3 = line4 = ""
+    
+#     for cadena in lista:
+        
+#         operando1, operador, operando2 = cadena.split()
+        
+#         if not operando1.isdigit() or not operando2.isdigit():
+#             raise isDigitTypeError()
+        
+#         res = str(eval(cadena))
+        
+#         if operador not in ('+', '-'):
+#             raise operatorTypeError()
+        
+#         max_len = max(len(operando1), len(operando2))
+#         min_len = min(len(operando1), len(operando2))
+        
+#         if max_len > 4 or min_len > 4:
+#             raise numberOfDigitsTypeError()
+        
+        
+#         line1 += f"  {operando1:>{max_len}}    "
+#         line2 += f"{operador} {operando2:>{max_len}}    "
+#         line3 += f"-" * (max_len + 2) + f"    "
+#         line4 += f" {res:>{max_len + 1}}    "
+        
+#     lineas = [line1, line2, line3, line4]
+#     for i in range(len(lineas)):
+#         lineas[i] = lineas[i].rstrip()
+        
+#     if val == True:
+            
+#         operacion = f"{lineas[0]}\n{lineas[1]}\n{lineas[2]}\n{lineas[3]}"
+            
+#     else:
+#         operacion = f"{lineas[0]}\n{lineas[1]}\n{lineas[2]}"
+
+#     return operacion
+    
+        
+
+# class LongitudExcedidaError(Exception):
+#     def __init__(self, mensaje="Error: Too many problems."):
+#         self.mensaje = mensaje
+#         super().__init__(self.mensaje)
+
+# class operatorTypeError(Exception):
+#     def __init__(self, mensaje="Error: Operator must be '+' or '-'."):
+#         self.mensaje = mensaje
+#         super().__init__(self.mensaje)
+        
+# class isDigitTypeError(Exception):
+#     def __init__(self, mensaje="Error: Numbers must only contain digits."):
+#         self.mensaje = mensaje
+#         super().__init__(self.mensaje)
+# class numberOfDigitsTypeError(Exception):
+#      def __init__(self, mensaje="Error: Numbers cannot be more than four digits."):
+#         self.mensaje = mensaje
+#         super().__init__(self.mensaje)
+
+# def arithmetic_arranger(lista, val = False):
+#     try:
+#         return mostrar_operacion(lista, val)
+#     except LongitudExcedidaError as e:
+#         return e
+#     except operatorTypeError as e:
+#         return e
+#     except isDigitTypeError as e:
+#         return e
+#     except numberOfDigitsTypeError as e:
+#         return e
 
 
 
+# print(arithmetic_arranger(['3 + 855', '3801 - 2', '45 + 43', '123 + 49', '45 + 43', '123 + 49']))
+
+
+# Calculador de area de poligonos
+
+# class Rectangle:
+    
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+        
+#     # @property    
+#     # def width(self):
+#     #     return self.width
+    
+#     # @property
+#     # def height(self):
+#     #     return self.height
+    
+#     def set_width(self, width):
+#         self.width = width
+        
+#     def set_height(self, height):
+#         self.height = height
+        
+#     def get_area(self):
+#         return self.width * self.height
+    
+#     def get_perimeter(self):
+#         return (2 * self.width + 2 * self.height)
+    
+#     def get_diagonal(self):
+#         return ((self.width ** 2 + self.height ** 2) ** .5)
+    
+#     def get_picture(self):
+#         if self.width > 50 or self.height > 50:
+#             return "Too big for picture"
+        
+#         picture = ""
+#         for i in range(self.height):
+#             for j in range(self.width):
+#                 picture += "*"
+#             picture += "\n"
+        
+#         return picture
+    
+#     def get_amount_inside(self, new_shape):
+#         return self.get_area() // new_shape.get_area()
+    
+#     def __str__(self):
+#         return f"Rectangle(width={self.width}, height={self.height})"
+    
+# class Square(Rectangle):
+#     def __init__(self, size):
+#         super().__init__(size, size)
+        
+#     def set_side(self, new_size):
+#         self.width = new_size
+#         self.height = new_size
+    
+#     def __str__(self):
+#         return f"Square(side={self.height})"
+    
+    
+    
+# rec = Rectangle(7, 3)
+# sqr = Square(5)
+
+# print(rec.get_picture())
+# print(rec.get_amount_inside(sqr))
+
+
+# print(rec.get_diagonal())
+# print(rec.get_picture())
+
+
+# Calculadora de tiempo
+
+# def add_time(start, duration, day = None):
+#     start = start.replace(" ", ":").split(":")
+#     duration = duration.split(":")
+#     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    
+    
+#     mins = (((int(start[1]) + int(duration[1])) / 60))
+#     hours = int(mins)
+#     mins = round((mins - int(mins)) * 60)
+    
+#     if start[2].upper() == 'PM':
+#         hours += 12
+#     hours += int(start[0]) + int(duration[0])
+    
+#     n_days = hours / 24
+    
+#     current_hour = round((n_days - int(n_days)) * 24 if n_days > 1 else hours)
+#     # hours_12format = current_hour - 12 if current_hour > 12 else current_hour
+#     hours_12format = 12 if current_hour == 0 else current_hour if current_hour <= 12 else current_hour - 12
+
+#     day_suffix = "PM" if 11 < current_hour < 24 else "AM"
+        
+#     n_days = int(n_days - (n_days - int(n_days)))
+#     time_result = (f"{hours_12format}:{f'0{mins}' if mins < 10 else str(mins)} {day_suffix}")
+    
+#     if day != None:
+#         i_day = days.index(day.capitalize())
+#         i_future_day = (i_day + n_days) % 7
+#         future_day = days[i_future_day]
+#         time_result += f", {future_day}"
+    
+#     #dias   
+#     if n_days > 1:
+#         time_result = f"{time_result} ({n_days} days later)"
+#     elif n_days == 1:
+#         time_result = f"{time_result} (next day)"
+    
+#     return time_result, hours_12format, current_hour
+
+
+# print(add_time("8:59 PM", "24:05"))
+
+# h_12 = (18 + 12)%12
+# print(h_12)
 
 
 
+# Calculadora de probabilidad
+
+# import copy
+# import random
+# # Consider using the modules imported above.
+
+# class Hat:
+
+#     def __init__(self, **kwargs):
+#         self.contents = []
+#         for color, num in kwargs.items():
+#             self.contents.extends([color] * num)
+                
+#     def show_list(self):
+#         for x in self.contents:
+#             print(x)
 
 
+#     def draw(self, num_of_balls):
+#         if num_of_balls > len(self.contents):
+#             return self.contents
+        
+#         take_balls = random.sample(self.contents, num_of_balls)
+#         for ball in take_balls:
+#             self.contents.remove(ball)
+#         return take_balls
+        
+
+# def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    
+#     successes = 0
+    
+#     for _ in range(num_experiments):
+        
+#         copy_hat = copy.deepcopy(hat)
+#         drawn_balls = copy_hat.draw(num_balls_drawn)
+        
+#         equal = True
+     
+#         for val, cant in expected_balls.items():
+            
+#             if drawn_balls.count(val) < cant:
+#                 equal = False
+#                 break
+#         if equal:
+#            successes += 1
+            
+#     return successes / num_experiments
+
+    
 
 
+# hat = Hat(blue=4, red=2, green=6)
+# probability = experiment(
+#     hat=hat,
+#     expected_balls={"blue": 2,
+#                     "red": 1},
+#     num_balls_drawn=4,
+#     num_experiments=1000)
+# print("Probability:", probability)
+    
+    
 
 
+#Aplicacion  de presupuesto
 
-rat1 = Raton('G503', 'USB', 'Logitech')
+# class Category:
+    
+#     def __init__(self, category):
+#         self.category = category
+#         self.total_amount = 0
+#         self.ledger = []
+        
+        
+#     def deposit(self, cantidad, descripcion =  ""):
+#         self.total_amount += cantidad
+#         self.ledger.append({"amount": cantidad, "description": descripcion})
+        
+    
+#     def get_balance(self):
+#         return self.total_amount
+        
+#     def check_funds(self, amount):
+        
+#         return amount <= self.get_balance()
+    
+    
+#     def withdraw(self, cantidad, descripcion = ""):
+    
+#         if self.check_funds(cantidad):
+        
+#             self.total_amount -= cantidad
+#             self.ledger.append({"amount": -cantidad, "description": descripcion})
+        
+#             return True
+    
+#         return False
+    
+    
+#     def transfer(self, monto, categoria):
+        
+#         if self.check_funds(monto):
+#             self.withdraw(monto, f"Transfer to {categoria.category}")
+#             categoria.deposit(monto, f"Transfer from {self.category}")
+#             return True
+#         return False
+    
+    
+#     def __str__(self):
+        
+#         title = f"{self.category:*^30}\n"
+#         items = ""
+#         for item in self.ledger:
+#             items += f"{item['description'][:23]:23}{item['amount']:>7.2f}\n"
+#         total = f"Total: {self.get_balance():.2f}"
+#         return title + items + total
+    
 
-print(rat1)
+
+# def create_spend_chart(categories):
+    
+#     chart = "Percentage spent by category\n"
+#     spendings = [sum(item['amount'] for item in category.ledger if item['amount'] < 0) for category in categories]
+#     total_spent = sum(spendings)
+    
+#     for i in range(100, -1, -10):
+#         chart += f"{i:3}| "
+#         for spending in spendings:
+#             chart += "o " if spending >= i * total_spent / 100 else "  "
+#         chart += "\n"
+
+#     chart += "    " + "-" * (2 * len(categories) + 1) + "\n"
+
+#     max_name_length = max(len(category.category) for category in categories)
+#     for i in range(max_name_length):
+#         chart += "     "
+#         for category in categories:
+#             if i < len(category.category):
+#                 chart += category.category[i] + "  "
+#             else:
+#                 chart += "   "
+#         chart += "\n"
+
+#     return chart.strip()
+
+ 
+ 
+# food = Category("Food")
+# food.deposit(1000, "initial deposit")
+# food.withdraw(10.15, "groceries")
+# food.withdraw(15.89, "restaurant and more food for dessert")
+# print(food.get_balance())
+# clothing = Category("Clothing")
+# food.transfer(50, clothing)
+# clothing.withdraw(25.55)
+# clothing.withdraw(100)
+# auto = Category("Auto")
+# auto.deposit(1000, "initial deposit")
+# auto.withdraw(15)
+
+# print(food)
+# print(clothing)
+
+# print(create_spend_chart([food, clothing, auto]))
